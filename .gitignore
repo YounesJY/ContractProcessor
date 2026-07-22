@@ -1,0 +1,67 @@
+## .NET / Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+.vs/
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## SQL
+*.mdf
+*.ldf
+*.ndf
+
+## OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+## Publish output
+publish/
+*.publish.xml
+
+## User-specific files
+appsettings.Development.json
+appsettings.Local.json
+
+## SQLite DB (keep structure, ignore data files)
+*.db
+*.db-shm
+*.db-wal
+
+## Old/Reference files
+ContractProcessorOld/
+Docs/
