@@ -223,4 +223,5 @@ public partial class MainForm : Form
             LoadCategories();
         }
     }
+
 }

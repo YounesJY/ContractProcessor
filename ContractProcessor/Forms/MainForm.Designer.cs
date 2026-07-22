@@ -13,26 +13,182 @@ partial class MainForm
 
     private void InitializeComponent()
     {
-        dgvContracts = new DataGridView();
-        btnUpload = new Button();
-        btnExport = new Button();
-        btnSelectFields = new Button();
-        btnDelete = new Button();
-        btnSettings = new Button();
-        cmbFilter = new ComboBox();
-        lblFilter = new Label();
-        panelTop = new Panel();
-        panelBottom = new Panel();
-
-        ((System.ComponentModel.ISupportInitialize)(dgvContracts)).BeginInit();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        dgvContracts = new Guna.UI2.WinForms.Guna2DataGridView();
+        btnUpload = new Guna.UI2.WinForms.Guna2Button();
+        btnExport = new Guna.UI2.WinForms.Guna2Button();
+        btnSelectFields = new Guna.UI2.WinForms.Guna2Button();
+        btnDelete = new Guna.UI2.WinForms.Guna2Button();
+        btnSettings = new Guna.UI2.WinForms.Guna2Button();
+        cmbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+        lblFilter = new Guna.UI2.WinForms.Guna2HtmlLabel();
+        panelTop = new Guna.UI2.WinForms.Guna2Panel();
+        ((System.ComponentModel.ISupportInitialize)dgvContracts).BeginInit();
         panelTop.SuspendLayout();
-        panelBottom.SuspendLayout();
         SuspendLayout();
-
+        // 
+        // dgvContracts
+        // 
+        dgvContracts.AllowUserToAddRows = false;
+        dgvContracts.AllowUserToDeleteRows = false;
+        dgvContracts.BackgroundColor = Color.Silver;
+        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 245);
+        dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+        dataGridViewCellStyle1.ForeColor = Color.White;
+        dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+        dgvContracts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+        dgvContracts.ColumnHeadersHeight = 15;
+        dgvContracts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle2.BackColor = Color.LightGray;
+        dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+        dataGridViewCellStyle2.ForeColor = Color.FromArgb(71, 69, 94);
+        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(220, 235, 255);
+        dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(71, 69, 94);
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+        dgvContracts.DefaultCellStyle = dataGridViewCellStyle2;
+        dgvContracts.Dock = DockStyle.Fill;
+        dgvContracts.GridColor = Color.DimGray;
+        dgvContracts.Location = new Point(0, 60);
+        dgvContracts.Name = "dgvContracts";
+        dgvContracts.ReadOnly = true;
+        dgvContracts.RowHeadersVisible = false;
+        dgvContracts.Size = new Size(860, 460);
+        dgvContracts.TabIndex = 0;
+        dgvContracts.ThemeStyle.BackColor = Color.Silver;
+        dgvContracts.ThemeStyle.GridColor = Color.DimGray;
+        dgvContracts.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(50, 50, 60);
+        dgvContracts.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+        dgvContracts.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+        dgvContracts.ThemeStyle.ReadOnly = true;
+        dgvContracts.ThemeStyle.RowsStyle.BackColor = Color.LightGray;
+        dgvContracts.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+        dgvContracts.ThemeStyle.RowsStyle.Height = 25;
+        dgvContracts.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(220, 235, 255);
+        // 
+        // btnUpload
+        // 
+        btnUpload.BorderRadius = 6;
+        btnUpload.CustomizableEdges = customizableEdges1;
+        btnUpload.FillColor = Color.FromArgb(0, 122, 204);
+        btnUpload.Font = new Font("Segoe UI", 9F);
+        btnUpload.ForeColor = Color.White;
+        btnUpload.Location = new Point(10, 14);
+        btnUpload.Name = "btnUpload";
+        btnUpload.ShadowDecoration.CustomizableEdges = customizableEdges2;
+        btnUpload.Size = new Size(120, 32);
+        btnUpload.TabIndex = 0;
+        btnUpload.Text = "Upload PDFs";
+        btnUpload.Click += btnUpload_Click;
+        // 
+        // btnExport
+        // 
+        btnExport.BorderRadius = 6;
+        btnExport.CustomizableEdges = customizableEdges3;
+        btnExport.FillColor = Color.FromArgb(40, 167, 69);
+        btnExport.Font = new Font("Segoe UI", 9F);
+        btnExport.ForeColor = Color.White;
+        btnExport.Location = new Point(360, 14);
+        btnExport.Name = "btnExport";
+        btnExport.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        btnExport.Size = new Size(100, 32);
+        btnExport.TabIndex = 3;
+        btnExport.Text = "Export";
+        btnExport.Click += btnExport_Click;
+        // 
+        // btnSelectFields
+        // 
+        btnSelectFields.BorderRadius = 6;
+        btnSelectFields.CustomizableEdges = customizableEdges5;
+        btnSelectFields.FillColor = Color.FromArgb(80, 80, 90);
+        btnSelectFields.Font = new Font("Segoe UI", 9F);
+        btnSelectFields.ForeColor = Color.White;
+        btnSelectFields.Location = new Point(140, 14);
+        btnSelectFields.Name = "btnSelectFields";
+        btnSelectFields.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        btnSelectFields.Size = new Size(120, 32);
+        btnSelectFields.TabIndex = 1;
+        btnSelectFields.Text = "Select Fields";
+        btnSelectFields.Click += btnSelectFields_Click;
+        // 
+        // btnDelete
+        // 
+        btnDelete.BorderRadius = 6;
+        btnDelete.CustomizableEdges = customizableEdges7;
+        btnDelete.FillColor = Color.FromArgb(220, 53, 69);
+        btnDelete.Font = new Font("Segoe UI", 9F);
+        btnDelete.ForeColor = Color.White;
+        btnDelete.Location = new Point(270, 14);
+        btnDelete.Name = "btnDelete";
+        btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        btnDelete.Size = new Size(80, 32);
+        btnDelete.TabIndex = 2;
+        btnDelete.Text = "Delete";
+        btnDelete.Click += btnDelete_Click;
+        // 
+        // btnSettings
+        // 
+        btnSettings.BorderRadius = 6;
+        btnSettings.CustomizableEdges = customizableEdges9;
+        btnSettings.FillColor = Color.FromArgb(108, 117, 125);
+        btnSettings.Font = new Font("Segoe UI", 9F);
+        btnSettings.ForeColor = Color.White;
+        btnSettings.Location = new Point(470, 14);
+        btnSettings.Name = "btnSettings";
+        btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges10;
+        btnSettings.Size = new Size(80, 32);
+        btnSettings.TabIndex = 4;
+        btnSettings.Text = "Settings";
+        btnSettings.Click += btnSettings_Click;
+        // 
+        // cmbFilter
+        // 
+        cmbFilter.BackColor = Color.Transparent;
+        cmbFilter.BorderRadius = 6;
+        cmbFilter.CustomizableEdges = customizableEdges11;
+        cmbFilter.DrawMode = DrawMode.OwnerDrawFixed;
+        cmbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+        cmbFilter.FocusedColor = Color.Empty;
+        cmbFilter.Font = new Font("Segoe UI", 9F);
+        cmbFilter.ForeColor = Color.FromArgb(68, 88, 112);
+        cmbFilter.ItemHeight = 30;
+        cmbFilter.Location = new Point(645, 14);
+        cmbFilter.Name = "cmbFilter";
+        cmbFilter.ShadowDecoration.CustomizableEdges = customizableEdges12;
+        cmbFilter.Size = new Size(130, 36);
+        cmbFilter.TabIndex = 6;
+        cmbFilter.SelectedIndexChanged += cmbFilter_SelectedIndexChanged;
+        // 
+        // lblFilter
+        // 
+        lblFilter.BackColor = Color.Transparent;
+        lblFilter.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+        lblFilter.Location = new Point(600, 18);
+        lblFilter.Name = "lblFilter";
+        lblFilter.Size = new Size(35, 17);
+        lblFilter.TabIndex = 5;
+        lblFilter.Text = "Filter:";
+        // 
         // panelTop
-        panelTop.Dock = DockStyle.Top;
-        panelTop.Height = 50;
-        panelTop.Padding = new Padding(10);
+        // 
         panelTop.Controls.Add(btnUpload);
         panelTop.Controls.Add(btnSelectFields);
         panelTop.Controls.Add(btnDelete);
@@ -40,79 +196,41 @@ partial class MainForm
         panelTop.Controls.Add(btnSettings);
         panelTop.Controls.Add(lblFilter);
         panelTop.Controls.Add(cmbFilter);
-
-        // btnUpload
-        btnUpload.Text = "Upload PDFs";
-        btnUpload.Location = new Point(10, 12);
-        btnUpload.Size = new Size(120, 30);
-        btnUpload.Click += btnUpload_Click;
-
-        // btnSelectFields
-        btnSelectFields.Text = "Select Fields";
-        btnSelectFields.Location = new Point(140, 12);
-        btnSelectFields.Size = new Size(120, 30);
-        btnSelectFields.Click += btnSelectFields_Click;
-
-        // btnDelete
-        btnDelete.Text = "Delete";
-        btnDelete.Location = new Point(270, 12);
-        btnDelete.Size = new Size(80, 30);
-        btnDelete.Click += btnDelete_Click;
-
-        // btnExport
-        btnExport.Text = "Export";
-        btnExport.Location = new Point(360, 12);
-        btnExport.Size = new Size(100, 30);
-        btnExport.Click += btnExport_Click;
-
-        // btnSettings
-        btnSettings.Text = "Settings";
-        btnSettings.Location = new Point(470, 12);
-        btnSettings.Size = new Size(80, 30);
-        btnSettings.Click += btnSettings_Click;
-
-        // lblFilter
-        lblFilter.Text = "Filter:";
-        lblFilter.Location = new Point(600, 17);
-        lblFilter.AutoSize = true;
-
-        // cmbFilter
-        cmbFilter.Location = new Point(640, 14);
-        cmbFilter.Size = new Size(120, 28);
-        cmbFilter.SelectedIndexChanged += cmbFilter_SelectedIndexChanged;
-
-        // dgvContracts
-        dgvContracts.Dock = DockStyle.Fill;
-        dgvContracts.ReadOnly = true;
-        dgvContracts.AllowUserToAddRows = false;
-        dgvContracts.AllowUserToDeleteRows = false;
-        dgvContracts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dgvContracts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+        panelTop.CustomizableEdges = customizableEdges13;
+        panelTop.Dock = DockStyle.Top;
+        panelTop.FillColor = Color.FromArgb(240, 240, 245);
+        panelTop.Location = new Point(0, 0);
+        panelTop.Name = "panelTop";
+        panelTop.Padding = new Padding(10);
+        panelTop.ShadowDecoration.CustomizableEdges = customizableEdges14;
+        panelTop.Size = new Size(860, 60);
+        panelTop.TabIndex = 1;
+        // 
         // MainForm
+        // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        BackColor = Color.White;
+        ClientSize = new Size(860, 520);
         Controls.Add(dgvContracts);
         Controls.Add(panelTop);
-        Text = "ContractProcessor";
+        Name = "MainForm";
         StartPosition = FormStartPosition.CenterScreen;
+        Text = "ContractProcessor";
         Load += MainForm_Load;
-
-        ((System.ComponentModel.ISupportInitialize)(dgvContracts)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)dgvContracts).EndInit();
         panelTop.ResumeLayout(false);
         panelTop.PerformLayout();
         ResumeLayout(false);
     }
 
-    private DataGridView dgvContracts;
-    private Button btnUpload;
-    private Button btnExport;
-    private Button btnSelectFields;
-    private Button btnDelete;
-    private Button btnSettings;
-    private ComboBox cmbFilter;
-    private Label lblFilter;
-    private Panel panelTop;
-    private Panel panelBottom;
+    private Guna.UI2.WinForms.Guna2DataGridView dgvContracts;
+    private Guna.UI2.WinForms.Guna2Button btnUpload;
+    private Guna.UI2.WinForms.Guna2Button btnExport;
+    private Guna.UI2.WinForms.Guna2Button btnSelectFields;
+    private Guna.UI2.WinForms.Guna2Button btnDelete;
+    private Guna.UI2.WinForms.Guna2Button btnSettings;
+    private Guna.UI2.WinForms.Guna2ComboBox cmbFilter;
+    private Guna.UI2.WinForms.Guna2HtmlLabel lblFilter;
+    private Guna.UI2.WinForms.Guna2Panel panelTop;
 }
