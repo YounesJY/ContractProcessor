@@ -59,7 +59,7 @@ partial class FieldSelectionForm
         btnCancel.Location = new Point(350, 10);
         btnCancel.Size = new Size(80, 28);
         btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        btnCancel.Click += (s, e) => { DialogResult = DialogResult.Cancel; Close(); };
+        btnCancel.Click += btnCancel_Click;
 
         // FieldSelectionForm
         AutoScaleDimensions = new SizeF(7F, 15F);

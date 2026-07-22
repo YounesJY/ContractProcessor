@@ -39,4 +39,10 @@ public partial class FieldSelectionForm : Form
         for (int i = 0; i < clbFields.Items.Count; i++)
             clbFields.SetItemChecked(i, false);
     }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
+    }
 }
