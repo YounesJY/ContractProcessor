@@ -17,6 +17,53 @@ Desktop application for extracting and managing data from insurance PDF contract
 5. Results displayed in a filterable table
 6. User exports selected data to Excel or CSV
 
+### Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[User selects root folder]
+    B --> C[Load existing contracts]
+    C --> D{User action}
+
+    D -->|Upload PDFs| E[Select PDF files]
+    E --> F[Compute SHA256 hash]
+    F --> G{Duplicate?}
+    G -->|Yes| H[Skip - show warning]
+    G -->|No| I[Extract text from PDF]
+    I --> J[Auto-detect category]
+    J --> K[Copy PDF to category folder]
+    K --> L[Insert into database]
+    L --> M[Refresh table]
+    M --> D
+
+    D -->|Select Fields| N[Show field selection dialog]
+    N --> O[User checks desired fields]
+    O --> P[Save selection to database]
+    P --> D
+
+    D -->|Filter by category| Q[Filter table by category]
+    Q --> D
+
+    D -->|Export| R{Fields selected?}
+    R -->|No| S[Show warning]
+    S --> D
+    R -->|Yes| T[Build export data]
+    T --> U{Export format?}
+    U -->|Excel| V[Export to .xlsx]
+    U -->|CSV| W[Export to .csv]
+    V --> X[Save file + open]
+    W --> X
+    X --> D
+
+    D -->|Settings| Y[Change root folder / manage categories]
+    Y --> D
+
+    D -->|Delete contract| Z[Confirm + delete from DB]
+    Z --> D
+
+    D -->|Close app| AA([End])
+```
+
 ### Contract Types
 
 | Type | Description |
