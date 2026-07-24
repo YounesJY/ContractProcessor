@@ -75,6 +75,29 @@ flowchart TD
 
 ---
 
+## Extraction Evolution
+
+| Phase | Approach | Accuracy | Resources | Status |
+|-------|----------|----------|-----------|--------|
+| 1 | Regex-based (FieldExtractor) | ~30% | Negligible | ❌ Failed — jumbled PDF text breaks patterns |
+| 2 | Local LLM (Ollama + llama3.2) | ~70% | ~2.5 GB RAM, ~2 min/PDF | ⚠️ Works but slow & resource-heavy |
+| 3 | **Online LLM (OpenAI / Azure)** | **Target 90%+** | Negligible local | 🔜 **Next** |
+
+### Why Regex Failed
+Allianz/Sanlam PDFs produce jumbled text where labels and values run together:
+```
+Police N°IntermédiaireAdresseintermédiaireCode Intermédiaire01883
+```
+Regex patterns match wrong chunks because there's no reliable delimiter.
+
+### Why Local LLM (Ollama) Isn't Enough
+- **Speed**: ~2 minutes per PDF on CPU
+- **RAM**: ~2.5 GB for llama3.2 (2B params)
+- **Accuracy**: ~70% — still misses Police Num, confuses dates, hallucinates
+- **Root cause**: 2B parameter model too small for complex document parsing; no vision/layout awareness
+
+---
+
 ## Current Status
 
 ### Completed
@@ -87,14 +110,19 @@ flowchart TD
 - [x] Export to CSV (CsvHelper) and Excel (ClosedXML)
 - [x] Guna UI 2.0 controls for modern look
 - [x] WinForms UI with upload, table view, field selection, export
+- [x] **Local AI extraction (Ollama + llama3.2) — working, ~70% accuracy**
+- [x] Manual extraction fallback (split-view: PDF text + editable fields)
+- [x] Settings: root folder, dynamic categories, AI toggle + model selector
+- [x] Debug logging (`debug.log`) for troubleshooting AI extraction
 
 ### In Progress
 
 - [ ] Testing with real PDF samples
-- [ ] Refining field extraction patterns
+- [ ] Evaluating online LLM options (OpenAI / Azure Document Intelligence)
 
-### TODO
+### Next Steps
 
+- [ ] **Integrate OpenAI GPT-4o-mini or Azure Document Intelligence** for production accuracy
 - [ ] OCR support for scanned PDFs (Tesseract)
 - [ ] Manual category override during upload
 - [ ] Remember field selection preferences
@@ -113,6 +141,8 @@ flowchart TD
 | PDF Parsing  | PdfPig                           |
 | Excel Export | ClosedXML                        |
 | CSV Export   | CsvHelper                        |
+| **Local AI** | **Ollama + llama3.2** (optional) |
+| **Cloud AI** | **OpenAI GPT-4o-mini / Azure Document Intelligence (planned)** |
 | Deployment   | ClickOnce (planned)              |
 
 ---
