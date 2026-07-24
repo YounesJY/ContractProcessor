@@ -8,9 +8,9 @@ namespace ContractProcessor.Forms;
 
 public partial class MainForm : Form
 {
-    private readonly DatabaseHelper _db;
+private readonly DatabaseHelper _db;
     private readonly IPdfProcessor _pdfProcessor;
-    private readonly ExtractionService _extractionService;
+    private ExtractionService _extractionService;
     private readonly AppSettings _settings;
     private List<Contract> _contracts = new();
 
@@ -19,8 +19,18 @@ public partial class MainForm : Form
         InitializeComponent();
         _db = new DatabaseHelper(dbPath);
         _pdfProcessor = new PdfProcessor();
-        _extractionService = new ExtractionService(settings.UseAI, settings.AIModel);
         _settings = settings;
+        CreateExtractionService();
+    }
+
+    private void CreateExtractionService()
+    {
+        _extractionService = new ExtractionService(
+            _settings.UseAI,
+            _settings.AIModel,
+            _settings.UseCloudAI,
+            _settings.OpenRouterApiKey,
+            _settings.OpenRouterModel);
     }
 
     private void MainForm_Load(object sender, EventArgs e)
@@ -63,9 +73,10 @@ public partial class MainForm : Form
         if (dialog.ShowDialog() != DialogResult.OK)
             return;
 
-        int imported = 0;
+int imported = 0;
         int skipped = 0;
         int aiCount = 0;
+        string lastMethod = "Regex";
 
         foreach (var filePath in dialog.FileNames)
         {
@@ -104,8 +115,11 @@ public partial class MainForm : Form
             _db.InsertContract(contract);
             imported++;
 
-            if (extraction.Method == "AI")
+            if (extraction.Method == "AI" || extraction.Method == "OpenRouter")
+            {
                 aiCount++;
+                lastMethod = extraction.Method;
+            }
         }
 
         LoadContracts(cmbFilter.SelectedItem?.ToString());
@@ -114,7 +128,7 @@ public partial class MainForm : Form
             NotificationHelper.ShowWarning($"{skipped} duplicate(s) skipped.");
         if (imported > 0)
         {
-            var method = aiCount > 0 ? "AI" : "Regex";
+            var method = aiCount > 0 ? lastMethod : "Regex";
             NotificationHelper.ShowSuccess($"{imported} contract(s) imported via {method}.");
         }
     }
@@ -231,6 +245,7 @@ public partial class MainForm : Form
         if (form.ShowDialog() == DialogResult.OK)
         {
             LoadCategories();
+            CreateExtractionService();
         }
     }
 

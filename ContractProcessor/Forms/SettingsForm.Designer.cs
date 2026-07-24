@@ -26,6 +26,12 @@ partial class SettingsForm
         chkUseAI = new Guna.UI2.WinForms.Guna2ToggleSwitch();
         lblModel = new Guna.UI2.WinForms.Guna2HtmlLabel();
         cmbModel = new Guna.UI2.WinForms.Guna2ComboBox();
+        lblCloudAI = new Guna.UI2.WinForms.Guna2HtmlLabel();
+        chkUseCloudAI = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+        lblCloudApiKey = new Guna.UI2.WinForms.Guna2HtmlLabel();
+        txtOpenRouterApiKey = new Guna.UI2.WinForms.Guna2TextBox();
+        lblCloudModel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+        cmbCloudModel = new Guna.UI2.WinForms.Guna2ComboBox();
         SuspendLayout();
 
         // lblRootFolder
@@ -90,7 +96,7 @@ partial class SettingsForm
 
         // btnSave
         btnSave.Text = "Save";
-        btnSave.Location = new Point(350, 370);
+        btnSave.Location = new Point(350, 420);
         btnSave.Size = new Size(120, 38);
         btnSave.FillColor = System.Drawing.Color.FromArgb(0, 122, 204);
         btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -122,10 +128,56 @@ partial class SettingsForm
         cmbModel.Items.AddRange(new object[] { "llama3.2", "mistral", "phi3", "gemma2" });
         cmbModel.SelectedIndex = 0;
 
+        // lblCloudAI
+        lblCloudAI.Text = "Cloud AI Fallback (OpenRouter):";
+        lblCloudAI.Location = new Point(20, 360);
+        lblCloudAI.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+
+        // chkUseCloudAI
+        chkUseCloudAI.Location = new Point(280, 362);
+        chkUseCloudAI.Size = new Size(50, 25);
+        chkUseCloudAI.Checked = false;
+
+        // lblCloudApiKey
+        lblCloudApiKey.Text = "API Key:";
+        lblCloudApiKey.Location = new Point(20, 395);
+        lblCloudApiKey.Font = new System.Drawing.Font("Segoe UI", 9F);
+
+        // txtOpenRouterApiKey
+        txtOpenRouterApiKey.Location = new Point(20, 418);
+        txtOpenRouterApiKey.Size = new Size(470, 32);
+        txtOpenRouterApiKey.PlaceholderText = "Enter OpenRouter API key (get from openrouter.ai)";
+        txtOpenRouterApiKey.BorderRadius = 6;
+        txtOpenRouterApiKey.Font = new System.Drawing.Font("Segoe UI", 9F);
+        txtOpenRouterApiKey.UseSystemPasswordChar = true;
+
+        // lblCloudModel
+        lblCloudModel.Text = "Model:";
+        lblCloudModel.Location = new Point(20, 455);
+        lblCloudModel.Font = new System.Drawing.Font("Segoe UI", 9F);
+
+        // cmbCloudModel
+        cmbCloudModel.Location = new Point(80, 451);
+        cmbCloudModel.Size = new Size(410, 32);
+        cmbCloudModel.Font = new System.Drawing.Font("Segoe UI", 9F);
+        cmbCloudModel.BorderRadius = 6;
+        cmbCloudModel.DropDownStyle = ComboBoxStyle.DropDownList;
+        cmbCloudModel.Items.AddRange(new object[] { 
+            "meta-llama/llama-3.1-8b-instruct",
+            "mistralai/mistral-7b-instruct",
+            "microsoft/phi-3-mini-128k-instruct",
+            "qwen/qwen-2-7b-instruct",
+            "google/gemma-2-9b-it",
+            "openai/gpt-4o-mini",
+            "deepseek/deepseek-chat",
+            "anthropic/claude-3.5-sonnet"
+        });
+        cmbCloudModel.SelectedIndex = 0;
+
         // SettingsForm
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(510, 430);
+        ClientSize = new Size(510, 510);
         BackColor = System.Drawing.Color.White;
         Controls.Add(lblRootFolder);
         Controls.Add(txtRootFolder);
@@ -140,6 +192,12 @@ partial class SettingsForm
         Controls.Add(chkUseAI);
         Controls.Add(lblModel);
         Controls.Add(cmbModel);
+        Controls.Add(lblCloudAI);
+        Controls.Add(chkUseCloudAI);
+        Controls.Add(lblCloudApiKey);
+        Controls.Add(txtOpenRouterApiKey);
+        Controls.Add(lblCloudModel);
+        Controls.Add(cmbCloudModel);
         Text = "Settings";
         StartPosition = FormStartPosition.CenterParent;
         FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -163,4 +221,10 @@ partial class SettingsForm
     private Guna.UI2.WinForms.Guna2ToggleSwitch chkUseAI;
     private Guna.UI2.WinForms.Guna2HtmlLabel lblModel;
     private Guna.UI2.WinForms.Guna2ComboBox cmbModel;
+    private Guna.UI2.WinForms.Guna2HtmlLabel lblCloudAI;
+    private Guna.UI2.WinForms.Guna2ToggleSwitch chkUseCloudAI;
+    private Guna.UI2.WinForms.Guna2HtmlLabel lblCloudApiKey;
+    private Guna.UI2.WinForms.Guna2TextBox txtOpenRouterApiKey;
+    private Guna.UI2.WinForms.Guna2HtmlLabel lblCloudModel;
+    private Guna.UI2.WinForms.Guna2ComboBox cmbCloudModel;
 }

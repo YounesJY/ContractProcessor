@@ -26,6 +26,12 @@ public partial class SettingsForm : Form
 
         var modelIndex = cmbModel.Items.IndexOf(_settings.AIModel);
         cmbModel.SelectedIndex = modelIndex >= 0 ? modelIndex : 0;
+
+        chkUseCloudAI.Checked = _settings.UseCloudAI;
+        txtOpenRouterApiKey.Text = _settings.OpenRouterApiKey;
+
+        var cloudModelIndex = cmbCloudModel.Items.IndexOf(_settings.OpenRouterModel);
+        cmbCloudModel.SelectedIndex = cloudModelIndex >= 0 ? cloudModelIndex : 0;
     }
 
     private void LoadCategories()
@@ -77,6 +83,9 @@ public partial class SettingsForm : Form
         _settings.Categories = lstCategories.Items.Cast<string>().ToList();
         _settings.UseAI = chkUseAI.Checked;
         _settings.AIModel = cmbModel.SelectedItem?.ToString() ?? "llama3.2";
+        _settings.UseCloudAI = chkUseCloudAI.Checked;
+        _settings.OpenRouterApiKey = txtOpenRouterApiKey.Text;
+        _settings.OpenRouterModel = cmbCloudModel.SelectedItem?.ToString() ?? "meta-llama/llama-3.1-8b-instruct:free";
         SettingsService.Save(_settings);
         NotificationHelper.ShowSuccess("Settings saved.");
         DialogResult = DialogResult.OK;
