@@ -5,6 +5,29 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ---
 
+## [0.8.0] — 2026-07-24
+
+### Added
+- **OpenRouter cloud AI fallback** — OpenRouter integration as cloud fallback after local Ollama
+  - New `OpenRouterService.cs` — HTTP client for OpenRouter API (chat/completions)
+  - `AppSettings`: `UseCloudAI`, `OpenRouterApiKey`, `OpenRouterModel` properties
+  - `SettingsForm`: Cloud AI toggle, API key input (password), model dropdown
+  - `ExtractionService`: Fallback chain Ollama → OpenRouter → Regex
+  - `MainForm`: Recreates ExtractionService on settings change (no restart needed)
+
+### Changed
+- **Model list updated** — Removed deprecated `:free` suffixes, using paid models with free tiers
+  - Working: `meta-llama/llama-3.1-8b-instruct`, `mistralai/mistral-7b-instruct`, `microsoft/phi-3-mini-128k-instruct`, `qwen/qwen-2-7b-instruct`
+  - Paid: `openai/gpt-4o-mini`, `deepseek/deepseek-chat`, `anthropic/claude-3.5-sonnet`
+- **Prompt improved** — Explicit date ordering (effet = start, échéance = end), phone digits only, null not "null" string
+- **Settings apply immediately** — No app restart required after toggling AI settings
+
+### Fixed
+- OpenRouter 404 errors on deprecated `:free` model suffixes
+- "null" string values now treated as empty
+
+---
+
 ## [0.7.0] — 2026-07-24
 
 ### Completed
@@ -182,3 +205,4 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 | 0.6.3 | 2026-07-24 | Fix AI timeout (5min) + reduce prompt text (4000 chars) + debug logging |
 | 0.6.4 | 2026-07-24 | Fix UTF-8 encoding + simplify prompt + reduce fields for accuracy |
 | 0.7.0 | 2026-07-24 | AI extraction complete — local Ollama end-to-end |
+| 0.8.0 | 2026-07-24 | OpenRouter cloud fallback — Ollama → OpenRouter → Regex |
