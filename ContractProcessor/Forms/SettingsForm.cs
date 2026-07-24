@@ -22,6 +22,10 @@ public partial class SettingsForm : Form
     private void LoadSettings()
     {
         txtRootFolder.Text = _settings.RootFolder;
+        chkUseAI.Checked = _settings.UseAI;
+
+        var modelIndex = cmbModel.Items.IndexOf(_settings.AIModel);
+        cmbModel.SelectedIndex = modelIndex >= 0 ? modelIndex : 0;
     }
 
     private void LoadCategories()
@@ -71,6 +75,8 @@ public partial class SettingsForm : Form
     {
         _settings.RootFolder = txtRootFolder.Text;
         _settings.Categories = lstCategories.Items.Cast<string>().ToList();
+        _settings.UseAI = chkUseAI.Checked;
+        _settings.AIModel = cmbModel.SelectedItem?.ToString() ?? "llama3.2";
         SettingsService.Save(_settings);
         NotificationHelper.ShowSuccess("Settings saved.");
         DialogResult = DialogResult.OK;

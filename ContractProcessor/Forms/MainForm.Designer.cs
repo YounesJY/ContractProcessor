@@ -31,6 +31,8 @@ partial class MainForm
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         dgvContracts = new Guna.UI2.WinForms.Guna2DataGridView();
         btnUpload = new Guna.UI2.WinForms.Guna2Button();
+        btnViewText = new Guna.UI2.WinForms.Guna2Button();
+        btnManualExtract = new Guna.UI2.WinForms.Guna2Button();
         btnExport = new Guna.UI2.WinForms.Guna2Button();
         btnSelectFields = new Guna.UI2.WinForms.Guna2Button();
         btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -99,6 +101,32 @@ partial class MainForm
         btnUpload.Text = "Upload PDFs";
         btnUpload.Click += btnUpload_Click;
         // 
+        // btnViewText
+        // 
+        btnViewText.BorderRadius = 6;
+        btnViewText.FillColor = Color.FromArgb(111, 66, 193);
+        btnViewText.Font = new Font("Segoe UI", 9F);
+        btnViewText.ForeColor = Color.White;
+        btnViewText.Location = new Point(140, 14);
+        btnViewText.Name = "btnViewText";
+        btnViewText.Size = new Size(100, 32);
+        btnViewText.TabIndex = 7;
+        btnViewText.Text = "View Text";
+        btnViewText.Click += btnViewText_Click;
+        // 
+        // btnManualExtract
+        // 
+        btnManualExtract.BorderRadius = 6;
+        btnManualExtract.FillColor = Color.FromArgb(255, 193, 7);
+        btnManualExtract.Font = new Font("Segoe UI", 9F);
+        btnManualExtract.ForeColor = Color.FromArgb(50, 50, 60);
+        btnManualExtract.Location = new Point(250, 14);
+        btnManualExtract.Name = "btnManualExtract";
+        btnManualExtract.Size = new Size(120, 32);
+        btnManualExtract.TabIndex = 8;
+        btnManualExtract.Text = "Manual Extract";
+        btnManualExtract.Click += btnManualExtract_Click;
+        // 
         // btnExport
         // 
         btnExport.BorderRadius = 6;
@@ -106,10 +134,9 @@ partial class MainForm
         btnExport.FillColor = Color.FromArgb(40, 167, 69);
         btnExport.Font = new Font("Segoe UI", 9F);
         btnExport.ForeColor = Color.White;
-        btnExport.Location = new Point(360, 14);
+        btnExport.Location = new Point(570, 14);
         btnExport.Name = "btnExport";
-        btnExport.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        btnExport.Size = new Size(100, 32);
+        btnExport.Size = new Size(80, 32);
         btnExport.TabIndex = 3;
         btnExport.Text = "Export";
         btnExport.Click += btnExport_Click;
@@ -121,10 +148,9 @@ partial class MainForm
         btnSelectFields.FillColor = Color.FromArgb(80, 80, 90);
         btnSelectFields.Font = new Font("Segoe UI", 9F);
         btnSelectFields.ForeColor = Color.White;
-        btnSelectFields.Location = new Point(140, 14);
+        btnSelectFields.Location = new Point(380, 14);
         btnSelectFields.Name = "btnSelectFields";
-        btnSelectFields.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        btnSelectFields.Size = new Size(120, 32);
+        btnSelectFields.Size = new Size(100, 32);
         btnSelectFields.TabIndex = 1;
         btnSelectFields.Text = "Select Fields";
         btnSelectFields.Click += btnSelectFields_Click;
@@ -136,10 +162,9 @@ partial class MainForm
         btnDelete.FillColor = Color.FromArgb(220, 53, 69);
         btnDelete.Font = new Font("Segoe UI", 9F);
         btnDelete.ForeColor = Color.White;
-        btnDelete.Location = new Point(270, 14);
+        btnDelete.Location = new Point(490, 14);
         btnDelete.Name = "btnDelete";
-        btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        btnDelete.Size = new Size(80, 32);
+        btnDelete.Size = new Size(70, 32);
         btnDelete.TabIndex = 2;
         btnDelete.Text = "Delete";
         btnDelete.Click += btnDelete_Click;
@@ -151,9 +176,8 @@ partial class MainForm
         btnSettings.FillColor = Color.FromArgb(108, 117, 125);
         btnSettings.Font = new Font("Segoe UI", 9F);
         btnSettings.ForeColor = Color.White;
-        btnSettings.Location = new Point(470, 14);
+        btnSettings.Location = new Point(660, 14);
         btnSettings.Name = "btnSettings";
-        btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges10;
         btnSettings.Size = new Size(80, 32);
         btnSettings.TabIndex = 4;
         btnSettings.Text = "Settings";
@@ -190,6 +214,8 @@ partial class MainForm
         // panelTop
         // 
         panelTop.Controls.Add(btnUpload);
+        panelTop.Controls.Add(btnViewText);
+        panelTop.Controls.Add(btnManualExtract);
         panelTop.Controls.Add(btnSelectFields);
         panelTop.Controls.Add(btnDelete);
         panelTop.Controls.Add(btnExport);
@@ -226,6 +252,8 @@ partial class MainForm
 
     private Guna.UI2.WinForms.Guna2DataGridView dgvContracts;
     private Guna.UI2.WinForms.Guna2Button btnUpload;
+    private Guna.UI2.WinForms.Guna2Button btnViewText;
+    private Guna.UI2.WinForms.Guna2Button btnManualExtract;
     private Guna.UI2.WinForms.Guna2Button btnExport;
     private Guna.UI2.WinForms.Guna2Button btnSelectFields;
     private Guna.UI2.WinForms.Guna2Button btnDelete;

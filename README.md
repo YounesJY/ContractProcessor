@@ -66,12 +66,12 @@ flowchart TD
 
 ### Contract Types
 
-| Type | Description |
-|------|-------------|
-| AT | Assurance Temporaire (temporary life insurance) |
-| AUTO | Automobile/vehicle insurance |
-| MRH | Multirisque Habitation (home insurance) |
-| *New types can be added dynamically via Settings* |
+| Type                                              | Description                                     |
+| ------------------------------------------------- | ----------------------------------------------- |
+| AT                                                | Assurance Temporaire (temporary life insurance) |
+| AUTO                                              | Automobile/vehicle insurance                    |
+| MRH                                               | Multirisque Habitation (home insurance)         |
+| *New types can be added dynamically via Settings* |                                                 |
 
 ---
 
@@ -105,15 +105,15 @@ flowchart TD
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| Language | C# (.NET 8) |
-| UI | WinForms + Guna UI 2.0 |
-| Database | SQLite (file-based, zero config) |
-| PDF Parsing | PdfPig |
-| Excel Export | ClosedXML |
-| CSV Export | CsvHelper |
-| Deployment | ClickOnce (planned) |
+| Component    | Technology                       |
+| ------------ | -------------------------------- |
+| Language     | C# (.NET 8)                      |
+| UI           | WinForms + Guna UI 2.0           |
+| Database     | SQLite (file-based, zero config) |
+| PDF Parsing  | PdfPig                           |
+| Excel Export | ClosedXML                        |
+| CSV Export   | CsvHelper                        |
+| Deployment   | ClickOnce (planned)              |
 
 ---
 
